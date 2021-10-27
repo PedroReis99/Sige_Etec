@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InfoCreche" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="194a645a-969f-460d-ab47-4bf9fe2e688a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="243"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tblAluno.`Id_aluno` AS tblAluno_Id_aluno,
+     tblAluno.`NomeAluno` AS tblAluno_NomeAluno,
+     tblSono.`DormeBemNoite` AS tblSono_DormeBemNoite,
+     tblSono.`AcordaMadrugada` AS tblSono_AcordaMadrugada,
+     tblSono.`DormeDia` AS tblSono_DormeDia,
+     tblSono.`QuntHr` AS tblSono_QuntHr,
+     tblAlimentacao.`MamaPeito` AS tblAlimentacao_MamaPeito,
+     tblAlimentacao.`VezesDia` AS tblAlimentacao_VezesDia,
+     tblAlimentacao.`UsoMamadeira` AS tblAlimentacao_UsoMamadeira,
+     tblAlimentacao.`MamadeiraQntDia` AS tblAlimentacao_MamadeiraQntDia,
+     tblAlimentacao.`AlimentoSolido` AS tblAlimentacao_AlimentoSolido,
+     tblParto.`LocalPar` AS tblParto_LocalPar,
+     tblParto.`Peso` AS tblParto_Peso,
+     tblParto.`Altura` AS tblParto_Altura,
+     tblParto.`Duracao` AS tblParto_Duracao,
+     tblParto.`DesenvPar` AS tblParto_DesenvPar,
+     tblParto.`Anestesia` AS tblParto_Anestesia,
+     tblParto.`TipoAnes` AS tblParto_TipoAnes,
+     tblParto.`Choro` AS tblParto_Choro,
+     tblParto.`Roxo` AS tblParto_Roxo,
+     tblParto.`Ictericia` AS tblParto_Ictericia,
+     tblParto.`Incubadora` AS tblParto_Incubadora,
+     tblParto.`DiasIncub` AS tblParto_DiasIncub
+FROM
+     `tblAluno` tblAluno INNER JOIN `tblSono` tblSono ON tblAluno.`Id_aluno` = tblSono.`fk_aluno6`
+     INNER JOIN `tblAlimentacao` tblAlimentacao ON tblAluno.`Id_aluno` = tblAlimentacao.`fk_aluno5`
+     INNER JOIN `tblParto` tblParto ON tblAluno.`Id_aluno` = tblParto.`fk_aluno4`
+where Id_aluno = $P{id};]]>
+	</queryString>
+	<field name="tblAluno_Id_aluno" class="java.lang.Integer"/>
+	<field name="tblAluno_NomeAluno" class="java.lang.String"/>
+	<field name="tblSono_DormeBemNoite" class="java.lang.String"/>
+	<field name="tblSono_AcordaMadrugada" class="java.lang.String"/>
+	<field name="tblSono_DormeDia" class="java.lang.String"/>
+	<field name="tblSono_QuntHr" class="java.lang.String"/>
+	<field name="tblAlimentacao_MamaPeito" class="java.lang.String"/>
+	<field name="tblAlimentacao_VezesDia" class="java.math.BigDecimal"/>
+	<field name="tblAlimentacao_UsoMamadeira" class="java.lang.String"/>
+	<field name="tblAlimentacao_MamadeiraQntDia" class="java.lang.String"/>
+	<field name="tblAlimentacao_AlimentoSolido" class="java.lang.String"/>
+	<field name="tblParto_LocalPar" class="java.lang.String"/>
+	<field name="tblParto_Peso" class="java.lang.String"/>
+	<field name="tblParto_Altura" class="java.lang.String"/>
+	<field name="tblParto_Duracao" class="java.lang.String"/>
+	<field name="tblParto_DesenvPar" class="java.lang.String"/>
+	<field name="tblParto_Anestesia" class="java.lang.String"/>
+	<field name="tblParto_TipoAnes" class="java.lang.String"/>
+	<field name="tblParto_Choro" class="java.lang.String"/>
+	<field name="tblParto_Roxo" class="java.lang.String"/>
+	<field name="tblParto_Ictericia" class="java.lang.String"/>
+	<field name="tblParto_Incubadora" class="java.lang.String"/>
+	<field name="tblParto_DiasIncub" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="87b3102a-4771-4707-8213-8d622e298ba9"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="e7e1b7bf-ff1f-45f7-a036-1c64cba4eb2c"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TITLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="43213349-27f5-470d-a562-d21f5fc4b21d"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="eeb72d63-d835-4e27-97ed-1443ac2b7f2e"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="751">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="7ed71641-2c6d-4934-a5fc-915dd9e62807"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="37" y="19" width="197" height="20" uuid="2ce093d9-ff27-4062-b185-b4c2590634fb"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAluno_Id_aluno}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="48" y="51" width="507" height="20" uuid="9ecabaab-c4e7-4ce6-98b3-879911458a6d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAluno_NomeAluno}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="144" y="107" width="131" height="20" uuid="c85b417f-2a46-4c5e-9a2b-492950f7cf2c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSono_DormeBemNoite}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="443" y="107" width="112" height="20" uuid="0b62acb0-7b42-4050-bc47-fe206fa11f0c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSono_AcordaMadrugada}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="110" y="143" width="130" height="20" uuid="ad0fd3c7-36c5-47fe-94cd-64b65b5df3e7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSono_DormeDia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="375" y="143" width="177" height="20" uuid="16ba39b4-acc7-4de4-aff5-097ec594600b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSono_QuntHr}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="110" y="206" width="106" height="20" uuid="d0f76a1c-6a78-476d-a074-45913f8f2c2f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAlimentacao_MamaPeito}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="375" y="206" width="168" height="20" uuid="660ce58e-dfe1-45b7-a87e-eb8166c6659a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAlimentacao_VezesDia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="132" y="236" width="84" height="20" uuid="c669a6cf-2a70-4e0b-aed9-7b662dd6c10e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAlimentacao_UsoMamadeira}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="375" y="236" width="168" height="20" uuid="143e6c8b-e6e3-491f-9aa8-acf6edb5181a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAlimentacao_MamadeiraQntDia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="289" width="555" height="55" uuid="c35f6247-809d-4075-8e12-9a26b50ec47f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAlimentacao_AlimentoSolido}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="48" y="364" width="507" height="20" uuid="fae9f79a-7527-45b8-ad89-a3587e7d769d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_LocalPar}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="48" y="399" width="84" height="20" uuid="437bcdbf-e8ee-4291-8ddd-767aaffd2697"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_Peso}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="206" y="399" width="106" height="20" uuid="dd78c7f5-30f6-4566-9aae-a7ed4f661f86"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_Altura}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="384" y="399" width="159" height="20" uuid="46ea743a-7733-4747-a347-a15494a24ec9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_Duracao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="193" y="430" width="362" height="20" uuid="a0e0d9af-1730-49af-aabd-0f5a99c27567"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_DesenvPar}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="86" y="461" width="130" height="20" uuid="66e96b3d-4bc7-409b-a4ab-2ee6e7552959"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_Anestesia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="264" y="461" width="147" height="20" uuid="6df1d3fd-6ecf-418e-839d-608436f7d864"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_TipoAnes}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="48" y="494" width="125" height="20" uuid="e52bb32c-0259-4226-880c-0749f516bcba"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_Choro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="275" y="494" width="77" height="20" uuid="efb9749f-ac6f-4e98-ac6c-0243c64cbbf3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_Roxo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="434" y="494" width="109" height="20" uuid="6af9d486-430f-4007-8659-fdd4c8afbe5b"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_Ictericia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="160" y="556" width="91" height="20" uuid="3ba95077-7502-4ec5-bf28-110a7a3d770d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_Incubadora}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="375" y="556" width="180" height="20" uuid="00387b05-89fa-45d5-9500-cdd99edcee9e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblParto_DiasIncub}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="20" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2d74be34-b5d0-45f7-b636-ab0bdd8f3fdc"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="51" width="48" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2c8d4054-0b62-44ab-a208-93b5cb338f5f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="107" width="144" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d1790f13-e216-40a5-9aa6-f36fa7b772bb"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dorme bem a noite:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="80" width="100" height="20" uuid="5409fc83-ca1f-4632-bcf7-44df18e99ebf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="275" y="107" width="168" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="5e8d1944-ab81-4932-9b59-d5265c7b8466"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acorda de madrugada:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="143" width="110" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="313c2261-b336-4f86-a22f-5d1fa920ce46"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dorme de dia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="251" y="143" width="124" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8be3d593-29e5-4518-8118-769d2ad56180"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantas horas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="206" width="110" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="bc57b95a-e592-4bce-a146-c0c7dec1ded9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mama no peito:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="170" width="100" height="20" uuid="c85c0bef-213b-4f93-8875-5bbb626a5600"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ALIMENTAÇÃO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="251" y="206" width="124" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b72cc781-b7fe-4976-83dc-608a4f881fb6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantas vezes:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="236" width="132" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="96203a12-645e-42b3-a141-3b9a8631bc09"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Utiliza mamadeira:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="251" y="236" width="124" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1d146d31-c5fb-4351-ac6c-c6cedc44c1b2"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantas vezes:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="269" width="312" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9d998dc2-aab2-4269-81a1-f31e5c3c8ab9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alimentos sólidos incuidos na alimentação:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="344" width="100" height="20" uuid="3bba7553-91ce-4041-bbd6-3e06ff237483"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PARTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="364" width="48" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="de13ca94-0a61-4221-ab5d-84dc84382cd0"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Local:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="399" width="48" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b405677c-b373-4cd6-aba1-ce4d00e02d9b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="144" y="399" width="62" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b0662445-ef80-465f-bd12-92868efdf19f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Altura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="316" y="399" width="68" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="36e39563-c6cf-4460-bccf-f2c6e08ae50f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Duração:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="430" width="193" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0d472a50-74b1-42ed-988b-f7b37afeabed"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Desenvolvimento do parto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="461" width="82" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ea6f95c6-a8ad-4dae-af58-eaf57b969cb2"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Anestesia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="227" y="461" width="37" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e4a3aba3-14bb-4e61-85c1-827082bf4cbe"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="494" width="48" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a493a6a4-7a2c-49ac-ac5b-6979c772e17f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Choro:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="192" y="494" width="83" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="176cf839-2303-4462-b91f-4273e0f3204a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ficou roxo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="494" width="64" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="dbf4e630-10b5-4a11-b75a-2e7d25994337"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ictericia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="556" width="160" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b4df62ea-ab19-4010-bdc5-a31288200a90"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ficou em incubadora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="264" y="556" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7191afac-341f-4e74-80b8-ece8a7ccd697"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantos dias:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="221d1380-0711-42a2-bb92-9860a78159ce"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="9c1201a6-6cef-42e7-9c72-9593e758ef35"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="2799dcda-5ad8-4283-8bc1-920305c11282"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

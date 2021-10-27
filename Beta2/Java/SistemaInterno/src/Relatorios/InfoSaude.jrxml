@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InfoSaude" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5ff6af18-2d09-44da-94b8-efa1dbc1cfa9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tblAluno.`Id_aluno` AS tblAluno_Id_aluno,
+     tblAluno.`NomeAluno` AS tblAluno_NomeAluno,
+     tblSaude.`DecMedic` AS tblSaude_DecMedic,
+     tblSaude.`DescAlergia` AS tblSaude_DescAlergia,
+     tblSaude.`ProbRespiratorio` AS tblSaude_ProbRespiratorio,
+     tblSaude.`DescCardiaco` AS tblSaude_DescCardiaco,
+     tblSaude.`DescNeurologico` AS tblSaude_DescNeurologico,
+     tblSaude.`AcompanhamentoNeuro` AS tblSaude_AcompanhamentoNeuro,
+     tblSaude.`DescRestri` AS tblSaude_DescRestri,
+     tblSaude.`RefluxoGastroesofagico` AS tblSaude_RefluxoGastroesofagico,
+     tblSaude.`UsoSonda` AS tblSaude_UsoSonda,
+     tblSaude.`DescPomada` AS tblSaude_DescPomada,
+     tblSaude.`DeficienciaMotora` AS tblSaude_DeficienciaMotora,
+     tblSaude.`DescMotor` AS tblSaude_DescMotor,
+     tblSaude.`ProtesePinosCadeiraRodas` AS tblSaude_ProtesePinosCadeiraRodas,
+     tblSaude.`DescConvulsao` AS tblSaude_DescConvulsao,
+     tblSaude.`DoencasPassadas` AS tblSaude_DoencasPassadas,
+     tblSaude.`OutrasDoencas` AS tblSaude_OutrasDoencas,
+     tblSaude.`Internacao` AS tblSaude_Internacao,
+     tblSaude.`Benzetacil` AS tblSaude_Benzetacil,
+     tblSaude.`MedicamentoFebre` AS tblSaude_MedicamentoFebre,
+     tblSaude.`DescConvenio` AS tblSaude_DescConvenio
+FROM
+     `tblAluno` tblAluno INNER JOIN `tblSaude` tblSaude ON tblAluno.`Id_aluno` = tblSaude.`fk_aluno7`
+where fk_aluno7 = $P{id};]]>
+	</queryString>
+	<field name="tblAluno_Id_aluno" class="java.lang.Integer"/>
+	<field name="tblAluno_NomeAluno" class="java.lang.String"/>
+	<field name="tblSaude_DecMedic" class="java.lang.String"/>
+	<field name="tblSaude_DescAlergia" class="java.lang.String"/>
+	<field name="tblSaude_ProbRespiratorio" class="java.lang.String"/>
+	<field name="tblSaude_DescCardiaco" class="java.lang.String"/>
+	<field name="tblSaude_DescNeurologico" class="java.lang.String"/>
+	<field name="tblSaude_AcompanhamentoNeuro" class="java.lang.String"/>
+	<field name="tblSaude_DescRestri" class="java.lang.String"/>
+	<field name="tblSaude_RefluxoGastroesofagico" class="java.lang.String"/>
+	<field name="tblSaude_UsoSonda" class="java.lang.String"/>
+	<field name="tblSaude_DescPomada" class="java.lang.String"/>
+	<field name="tblSaude_DeficienciaMotora" class="java.lang.String"/>
+	<field name="tblSaude_DescMotor" class="java.lang.String"/>
+	<field name="tblSaude_ProtesePinosCadeiraRodas" class="java.lang.String"/>
+	<field name="tblSaude_DescConvulsao" class="java.lang.String"/>
+	<field name="tblSaude_DoencasPassadas" class="java.lang.String"/>
+	<field name="tblSaude_OutrasDoencas" class="java.lang.String"/>
+	<field name="tblSaude_Internacao" class="java.lang.String"/>
+	<field name="tblSaude_Benzetacil" class="java.lang.String"/>
+	<field name="tblSaude_MedicamentoFebre" class="java.lang.String"/>
+	<field name="tblSaude_DescConvenio" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="c97659a1-27e0-4442-bb3c-a5b4ad8d1eed"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="1c163208-f8c5-43b8-85f1-a71ecdfaf7f0"/>
+					<textElement textAlignment="Center">
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Si.G.E.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="4c419b79-beea-4894-b2a3-260453ae0ede"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Informações de saúde]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="3"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="199e60c7-9316-4c12-ae87-6268bf55461c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="751">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="4f7751a9-c575-44a2-bba9-055b3089f7dd"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="20" width="150" height="20" uuid="5ec17440-d793-4357-9afe-aaf7394b6422"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAluno_Id_aluno}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="50" y="51" width="505" height="20" uuid="aecdfb67-1eb6-4e11-8823-0fc6351cbfa8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblAluno_NomeAluno}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="160" y="82" width="395" height="20" uuid="6c9940a8-9de1-419b-a314-2f417d287bb9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DecMedic}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="62" y="116" width="493" height="20" uuid="110903c3-722d-4157-b945-2d71e374cb9c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DescAlergia}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="175" y="149" width="380" height="20" uuid="0f4204f9-16dd-4100-8a67-a6b06ae2711c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_ProbRespiratorio}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="180" width="405" height="20" uuid="b2d3cd7e-8634-4fd6-b546-e30bd9353cdd"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DescCardiaco}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="160" y="210" width="395" height="20" uuid="c7ee3f43-d972-4e43-831f-24a2fc92736a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DescNeurologico}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="264" width="530" height="20" uuid="3c9ca228-bc8b-49b5-aa16-96bb8e220972"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_AcompanhamentoNeuro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="295" width="405" height="20" uuid="e6a49bf9-76ff-44e0-989b-174d94114392"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DescRestri}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="62" y="328" width="213" height="20" uuid="110bda2e-cf30-49c5-a104-dcabfc290f63"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_RefluxoGastroesofagico}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="386" y="328" width="169" height="20" uuid="f66a4029-3917-4d36-b99f-d48b9f8f0c09"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_UsoSonda}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="135" y="359" width="420" height="20" uuid="722969ad-6af6-4789-bd76-d9a42f63de23"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DescPomada}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="392" width="55" height="20" uuid="433a93e3-492b-4c09-b223-7ba1fe7325e8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DeficienciaMotora}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="285" y="392" width="270" height="20" uuid="9c5f2600-734f-4a6d-956a-16fe9b223b08"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DescMotor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="295" y="425" width="105" height="20" uuid="d18071a2-d6fb-41d4-b78e-32602e955a7b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_ProtesePinosCadeiraRodas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="458" width="455" height="20" uuid="867f4431-3d32-4368-b933-0c7d7212f4e1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DescConvulsao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="491" width="405" height="20" uuid="e32a3949-cbf4-4857-8e90-40b75c8fb8ba"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DoencasPassadas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="125" y="523" width="430" height="20" uuid="12b2ddcc-7af4-43a7-80bc-7e4402f75677"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_OutrasDoencas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="553" width="405" height="20" uuid="0780d876-3ba8-47b7-8512-f6a64669719b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_Internacao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="585" width="405" height="20" uuid="ce786a9b-a075-4ad9-bcf7-91b3fdcd731a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_Benzetacil}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="638" width="530" height="20" uuid="280e271a-81e3-4759-9598-6fe282c296e3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_MedicamentoFebre}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="25" y="689" width="530" height="62" uuid="c091d4da-2296-4e71-a836-63364bfca88b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tblSaude_DescConvenio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="20" width="25" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="24186ef7-1694-4e5a-b1d8-550151c50634"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="51" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1e4f6d74-5148-4485-91a7-80e25e616867"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="82" width="160" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="67fcca88-494f-4476-8bcd-1ac24528e1e3"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uso de medicamentos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="116" width="62" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="80e6d38b-5104-4f83-8a88-21b4649619ea"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alergias:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="149" width="175" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="40aebb62-f1ee-420c-b643-829da2c847cc"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Problemas respiratórios:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="180" width="150" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="6723b6ec-ff24-449d-8f30-54a5e2d8fdde"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Problemas cárdiacos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="210" width="160" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="224166cb-13db-4d6e-b3b0-b7ee5a49f416"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Problema neurológico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="244" width="234" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="5b94e149-ba9b-4f01-83d6-7a40fe6ad268"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Acompanhamento neurológico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="295" width="150" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1f590106-1e09-46c6-a232-e2c93d2223cb"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Atividades restritas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="328" width="62" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="abdec160-31b9-45d9-a641-748d977b3cad"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Refluxo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="285" y="328" width="101" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="617f1d6b-1438-40fe-bafa-8f424a4e092d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Utiliza sonda:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="359" width="135" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c78a283a-9150-4c3b-983c-79e06b2df7f1"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alergia a pomadas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="392" width="150" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="197662cb-1d81-4335-b8c8-006410ffd13b"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Deficiencia motora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="205" y="392" width="80" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8a3a22d0-6808-41ee-a5b5-96e4d3fd5941"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="425" width="295" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0de0a036-593f-4e22-9a05-9d8e9963f9db"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Uso de próteses/pinos/cadeira de rodas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="458" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ea3d8a9b-abb9-4ea2-82c5-8d52c4abd510"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Convulções:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="491" width="150" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="32d1bd86-48b4-4a39-a799-a634543a9a3e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Doenças que já teve:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="523" width="123" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ab0114f3-977f-469f-94d5-79de10aa0b43"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Outras doenças:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="553" width="150" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="df697ca2-c82e-4e6d-a6b4-1520d3bbcd3e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Já ficou internado(a):]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="585" width="150" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="cb8a7f8b-f74a-4c86-ae85-37e4866c6299"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Já tomou benzetacil:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="618" width="257" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="add9bca4-1357-4783-b880-f0f20e39d648"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Medicamentos para o caso de febre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="669" width="160" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2123156e-d06e-4aa8-af20-ac37c284f98a"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Convênio médico:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="25de39d3-430e-49bb-88f6-ee9a1fb767f1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="4248246a-aa29-4d36-a800-8eff0fd5bbd5"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="8df2344c-591f-4e82-af2b-aeed9443ed8d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
